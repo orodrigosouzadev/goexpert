@@ -1,4 +1,4 @@
-module github.com/orodrigosouzadev/11-eventos
+module github.com/orodrigosouzadev/goexpert/11-eventos
 
 go 1.20
 

@@ -1,6 +1,6 @@
 package main
 
-import "github.com/orodrigosouzadev/11-eventos/pkg/rabbitmq"
+import "github.com/orodrigosouzadev/goexpert/11-eventos/pkg/rabbitmq"
 
 func main() {
 	ch, err := rabbitmq.OpenChannel()
