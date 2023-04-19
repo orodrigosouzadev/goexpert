@@ -3,5 +3,6 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/fcutils-secret" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/goexpert-desafio-3-clean-arch" vcs="Git" />
   </component>
 </project>
