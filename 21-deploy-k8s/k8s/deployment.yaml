@@ -1,0 +1,49 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: server
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: server
+  template:
+    metadata:
+      labels:
+        app: server
+    spec:
+      containers:
+      - name: server
+        image: orodrigosouzadev/21-deploy-k8s:latest
+        resources:
+            limits:
+                memory: "32Mi"
+                cpu: "100m"
+
+        # probes
+        startupProbe:
+            httpGet:
+                path: /
+                port: 8080
+            failureThreshold: 10
+            periodSeconds: 10
+
+        readinessProbe:
+            httpGet:
+                path: /
+                port: 8080
+            failureThreshold: 2
+            periodSeconds: 10
+            timeoutSeconds: 5
+
+        livenessProbe:
+            httpGet:
+                path: /
+                port: 8080
+            failureThreshold: 3
+            periodSeconds: 10
+            timeoutSeconds: 5
+            successThreshold: 1
+
+        ports:
+        - containerPort: 8080
